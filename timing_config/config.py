@@ -91,7 +91,7 @@ def configure(hutch: str, ioc: str, iocindex: int, progress: float, PV: dict, fo
 
 def run_config_json(hutch: str, ioc: str, iocindex: int, progress: float, folder: str, pvlist_default: str, pvlist_new: str):
     PV0 = {}
-    total_iterations = 100
+    total_iterations = 10
 
     # Create a tqdm progress bar with a total number of iterations
     for i in tqdm(range(total_iterations)):
@@ -103,7 +103,7 @@ def run_config_json(hutch: str, ioc: str, iocindex: int, progress: float, folder
             
         elif i == 1:
             #print("Wait for the PVs to fluctuate...")
-            time.sleep(random.uniform(0.1, 10.0))
+            time.sleep(random.uniform(0.1, 1.0))
             
             get_PV_values(1, pvlist_default, PV0)
             #print("Next list of PV values recorded.")

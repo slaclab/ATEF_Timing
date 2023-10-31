@@ -20,4 +20,5 @@ with open(ioc_path, 'r') as readtxt:
         subprocess.run(["cp", "/cds/data/iocData/"+ ioc +"/iocInfo/IOC.pvlist", pv_lists_path + ioc +"_IOC.pvlist"])
         print("Begin configuring " + ioc + "| IOC: " + str(ioc_list.index(ioc)+1) + "/" + str(len(ioc_list)))
         config.run_config_json(hutch, ioc, ioc_list.index(ioc), (ioc_list.index(ioc)+1)/len(ioc_list), folder, pv_lists_path + ioc +"_IOC.pvlist", pv_lists_path + "new_" + ioc +"_IOC.pvlist")
-        print("Done")
+        print(ioc + "completed.")
+    print("Done")
